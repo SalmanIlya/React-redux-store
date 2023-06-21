@@ -21,18 +21,18 @@ const Home = () => {
         <div className='card-items' >
           <div className='text-box container my-5'>
             <h4>Latest Products</h4>
-            <button><NavLink className="nav-link">Shop Now</NavLink></button>
+            <button className='btn btn-outline-warning'><NavLink className="nav-link">Shop Now</NavLink></button>
           </div>
           <div className=' '>{  status==="pending"? 
           <div className='m-5 d-flex justify-content justify-content-center aline-item-center text-center'><h1>Loading...</h1></div>
            : status==="fulfilled"? <div className='d-flex flex-row flex-wrap  justify-content-center'>{
             product.slice(0,8).map((item)=>{
-              return <div key={item.id} className="card m-2 d-flex flex-col justify-content-between text-center " style={{width:"18rem"}}>
+              return <div key={item.id} className="card " style={{width:"18rem",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",margin:"5px"}}>
               <img className="card-img-top image" src={item.image} alt={item.title}/>
               <div className="card-body">
-                <h5 className="card-title">{item.title}</h5>
+                <h5 className="card-title">{item.title.slice(0,10)}</h5>
                
-                <button  className="btn btn-primary" onClick={()=>{dispatch(addToCard(item))}}>Go add to cart</button>
+                <button  className="btn btn-outline-warning" onClick={()=>{dispatch(addToCard(item))}}> Add To Card</button>
                
               </div>
             </div>
@@ -42,7 +42,7 @@ const Home = () => {
 
         </div>
         <div className='poster'>
-<div className='box1'> <button  className="btn btn-primary" onClick={()=>{dispatch(DeleteAll())}}>DeleteAll</button></div>
+<div className='box1'> </div>
 <div className='box2'></div>
 
         </div>

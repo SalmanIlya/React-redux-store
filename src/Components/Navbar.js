@@ -1,41 +1,25 @@
 import React from 'react'
-import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+
 const Navbar = () => {
-  const [state,setstate]=useState(true)
   return (
-    <div><nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <NavLink className="navbar-brand mx-5" to="/">Navbar</NavLink>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded={state} onClick={()=>{setstate(!state)}} aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div className="collapse navbar-collapse mx-5 " id="navbarSupportedContent">
-      <ul className="navbar-nav ms-auto">
-        <li className="nav-item ">
-          <NavLink className="nav-link" to="/">Home </NavLink>
-        </li>
-        <li className="nav-item ">
-          <NavLink className="nav-link" to="/store">Store </NavLink>
-        </li>
-        <li className="nav-item ">
-          <NavLink className="nav-link" to="/cart">Cart</NavLink>
-        </li> <li className="nav-item "></li>
-         <li className="nav-item ">
+    <div>
+      <div className='main-nav d-flex flex-row justify-content-between'>
+      <div className='logo m-3'>Logo</div>
+      <div className='navmanue'>
+        <ul className='navbar-nav d-flex flex-row justify-content-between'>
+          <li className='nav-item m-2'><NavLink className={"nav-link"} to={"/"}>Home</NavLink></li>
+          <li className='nav-item m-2'><NavLink className={"nav-link"} to={"/store"}>Store</NavLink></li><li className='nav-item m-2'><NavLink className={"nav-link"} to={"/cart"}>Card</NavLink></li><li className='nav-item m-2'><NavLink className={"nav-link"} to={"/about"}>About</NavLink></li><li className='nav-item m-2'><NavLink className={"nav-link"} to={"/contact"}>Contact</NavLink></li>
 
-          <NavLink className="nav-link" to="/about">About </NavLink>
-        </li> <li className="nav-item ">
-          <NavLink className="nav-link" to="/contact">Contact </NavLink>
-        </li>
-        
-      </ul>
-      <form className="form-inline my-2 my-lg-0">
-        <button className="btn btn-outline-success m-2 my-sm-0" type="submit"><NavLink className="nav-link" to={"/login"}> SignIn </NavLink> </button>
-        <button className="btn btn-outline-success m-2 my-sm-0" type="submit"><NavLink className="nav-link" to={"/register"}>SignUp </NavLink>  </button>
+        </ul>
+      </div>
+      <div>
+      <button className='btn btn-warning m-2'><NavLink className="nav-link" to={"/login"}>Login</NavLink></button>
+          <button className='btn btn-warning m-2  '><NavLink className={"nav-link"} to={"/register"}>Register</NavLink></button>
+      </div>
 
-      </form>
+      </div>
     </div>
-  </nav></div>
   )
 }
 
